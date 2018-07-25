@@ -1,0 +1,242 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="ie6 oldie" lang=zh><![endif]-->
+<!--[if IE 7]><html class="ie7 oldie" lang=zh><![endif]-->
+<!--[if IE 8]><html class="ie8 oldie" lang=zh><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="zh"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+    360安全中心
+            提醒您
+    </title>
+<link rel="stylesheet" href="resource/css/style.css?v=1492574250" />
+<link rel="bookmark" type="image/x-icon" href="resource/images/360.ico"/>
+<link rel="shortcut icon" type="image/x-icon" href="resource/images/360.ico"/>
+<link rel="icon" type="image/x-icon" href="resource/images/360.ico"/>
+</head>
+<body>
+<div class="wrap wrap-on">
+<div class="mod-warn">
+    <div class="hd">
+                    <h1><i></i><b>360安全中心</b>提醒您</h1>
+                <h3>虚假的中奖网站</h3>
+    </div>
+    <div class="bd">
+        <p class="p1">当前页面含有未经证实的中奖活动内容，虚假的中奖活动网站会要求您支付中奖相关费用或输入账号密码，为避免给您造成财产损失，请您谨慎访问。</p>
+        <p class="p2">您访问的网址是：<span title="http://kjjsef-steaym.cn/931842899/style/js/Particleground.js">http://kjjsef-steaym.cn/931842899/style/js/Particleground.js</span></p>
+        <p class="p3">
+                    </p>
+        <p class="p4">
+                                                <a id='g' style="cursor:pointer" onclick="return forceOpenUrl();return false;">忽略警告，继续访问</a> 
+                            
+                                        
+                         
+        </p>
+    </div>
+    <div class="ft clearfix">
+        <div class="lnk">
+                            <a id='s' href="http://fuwu.360.cn/shensu/putong?url=aHR0cDovL2tqanNlZi1zdGVheW0uY24vOTMxODQyODk5L3N0eWxlL2pzL1BhcnRpY2xlZ3JvdW5kLmpz"  target="_top" onclick="javascript:oit(this)">站长申诉</a>
+                        &nbsp;
+                                     
+        </div>
+                    <div class="share">
+                <a id='l' href="http://e.weibo.com/qihoo" class="ico ico-sina" target="_top" onclick="javascript:oit(this)">新浪</a>
+            </div>
+          
+    </div>
+</div>
+
+<!--charity popbox-->
+<div class="pop-box">
+    <a href="https://110.360.cn/?src=warn_wd"></a>
+</div>
+
+</div>
+
+
+<form id="safemon" action="http://kjjsef-steaym.cn/931842899/style/js/Particleground.js" method="get">
+        <input type="hidden" value="12269453" name='_360safeparam'/>
+</form>
+
+<script src="//s5.ssl.qhres.com/static/ab23f16ef4a08c81.js"></script>
+<script src="resource/css/mask.js?v=v1479106033" type="text/javascript"></script>
+<script src="//s2.ssl.qhres.com/static/3fd46bb64fc4937d.js"></script>
+<script language="JavaScript">
+var g_securityID = getSecurityID();
+var warn_from = "firefox";
+
+function oit(obj){if(window.top){window.top.location=obj.href;}}
+
+//判断是否为360浏览器5.x版本
+function getSecurityID() {
+    try {
+        return external.twGetSecurityID( window );
+    }
+    catch(e) {
+        return null;
+    }
+}
+
+//判断是否为360安全浏览器6.x版本
+function getSid() {
+    try {
+        return external.GetSID(window);
+    }
+    catch(e) {
+        return null;
+    }
+}
+
+function getMid(){
+    if(warn_from=='se'){
+        try{
+            var info = external.GetSpecialData("");
+            var info_split = new Array()
+            info_split = info.split(',');
+            return info_split[3];
+        }catch(e){
+            return ""
+        }
+    }else if(warn_from=='se6'){
+        try{
+            var mid = external.GetMID(external.GetSID(window));
+            return mid
+        }catch(e){
+            return "";
+        }
+    }else{
+        var mid = "46df49c3757d1437f0e763e8e3cbda4a4e89adc72b1c"
+        return mid;
+    }
+}
+
+function getVer(){
+    if(warn_from=='se'){
+        return '360se';
+    }else if(warn_from=='se6'){
+        return '360se6';
+    }else if(warn_from=='wd'){
+        return 'IE';
+    }else if(warn_from=='chrome'){
+        return 'chrome';
+    }else{
+        return warn_from;
+    }
+}
+
+function getMVer(){
+    var agent = navigator.userAgent.toLowerCase();
+    if(warn_from=='se'){
+        return external.twGetVersion(g_securityID);    
+    }else if(warn_from=='se6'){
+        //se6 mver
+    }else if(warn_from=='wd'){
+        var regStr_ie = /msie [\d.]+;/gi;
+        var str_ie = ''
+        if(agent.indexOf("msie") > 0){
+            str_ie =  agent.match(regStr_ie) ;
+        }
+        
+        return (str_ie+"").replace(/[^0-9.]/ig,"");
+    }else if(warn_from=='chrome'){
+        var regStr_chrome = /chrome\/[\d.]+/gi ;
+        var str_chrome = ''
+        if(agent.indexOf("chrome") > 0){
+            str_chrome = agent.match(regStr_chrome) ;
+        }
+
+        return (str_chrome+"").replace(/[^0-9.]/ig,"");
+    }
+}
+
+
+//忽略警告，继续访问
+function forceOpenUrl() { 
+    if( warn_from=='se' ){
+        var g_securityID = getSecurityID();
+        var se_ver = external.twGetVersion(g_securityID);
+        var danger_url = "http://kjjsef-steaym.cn/931842899/style/js/Particleground.js";
+        if (!se_ver || (se_ver < "3.1.6.0")){ 
+            external.twExtSendMessage(g_securityID,"SafeCentral","OpenUnSafeUrl",danger_url,""); 
+        }else{ 
+            external.twExtSendMessage2(g_securityID,"SafeCentral","OpenUnSafeUrl",danger_url,""); 
+        }
+        location.href = danger_url;
+        return;
+    }else { 
+        document.getElementById("safemon").submit();
+        return false;
+    }
+}
+
+function revisit() {
+    document.location="http://kjjsef-steaym.cn/931842899/style/js/Particleground.js";
+}
+
+function spartan(){
+    $.ajax({
+        url : "sure.php",
+        data:{
+            'url' : "http://kjjsef-steaym.cn/931842899/style/js/Particleground.js",
+            '360safeparam' : "12269453"
+        },
+        cache:false,
+        success:function(data) {
+            if (data == "ok") {
+                revisit();
+            }
+        }
+    });
+}
+
+function closeWindow(){
+    window.opener=null; 
+    window.open('','_self'); 
+    window.close(); 
+}
+
+(function() {
+    function sameh(){
+        var modwarnH = $('.mod-warn').height();
+        var popbox = $('.pop-box').height();    
+        if( modwarnH > popbox ) {
+            $('.pop-box').height(modwarnH - '2');
+        }
+        else {
+            $('.mod-warn .bd').height(popbox - 174);
+        }
+    }
+    sameh();
+})();
+
+function mask(){
+    var t = "60"
+    var st = "10"
+    var c = "104"
+    var remark = ""
+    if(remark){
+        gw = 1
+    }else{
+        gw = 0
+    }
+
+    var ver  = getVer()
+    var mver = getMVer()
+    var mid  = getMid()
+
+    var q = "mid="+mid+"&ver="+ver+"&mver="+mver+"&type="+t+"&st="+st+"&sc="+c+"&gw="+gw
+    return q
+}
+
+</script>
+<script>
+// info.wd.360.cn
+var newsConf = {"url":"https:\/\/110.360.cn\/?src=warn","img":"https:\/\/p0.ssl.qhimg.com\/d\/inn\/cae34c6f\/liewang.png","tag":"liewang"}
+</script><script>m.Mask(mask());</script>
+<script src="//s1.ssl.qhres.com/static/e10782aecd339ce3.js"></script>
+<script>
+    monitor.setProject('wd_ljy').getTrack().getClickAndKeydown();
+    </script>
+<script src="/warn/resource/js/cb-browser.js?v=1492574250"></script>
+</body>
+</html>

