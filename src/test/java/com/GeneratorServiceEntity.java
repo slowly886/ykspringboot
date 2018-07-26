@@ -28,21 +28,21 @@ public class GeneratorServiceEntity {
 
     private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
         GlobalConfig config = new GlobalConfig();
-        String dbUrl = "jdbc:mysql://10.10.10.144:3306/springboot";
+        String dbUrl = "jdbc:mysql://101.132.181.141:3306/ykspringboot";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(dbUrl)
                 .setUsername("root")
-                .setPassword("root")
+                .setPassword("Admin123456%")
                 .setDriverName("com.mysql.jdbc.Driver");
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig
-                .setCapitalMode(false)
+                .setCapitalMode(true)
                 .setEntityLombokModel(true)
-                .setDbColumnUnderline(false)
+                .setDbColumnUnderline(true)
                 .setNaming(NamingStrategy.underline_to_camel)
                 .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
-        config.setActiveRecord(false)
+        config.setActiveRecord(true)
                 .setAuthor("Y神带你飞")
                 .setOutputDir("E:\\codeGen")
                 .setFileOverride(true);
