@@ -1,18 +1,21 @@
 package com.yanke.modules.sys.controller;
 
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.common.utils.DateUtils;
+import com.common.utils.SnowflakeIdWorker;
 import com.yanke.modules.sys.entity.User;
 import com.yanke.modules.sys.service.UserService;
 import com.yanke.modules.utils.R;
-import common.utils.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -22,7 +25,7 @@ import java.util.Date;
  * @author Y神带你飞
  * @since 2018-07-26
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -31,6 +34,7 @@ public class UserController {
 
     @CrossOrigin("*")
     @RequestMapping("/addUser")
+    @ResponseBody
     public R addUser(String username) {
         SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker();
 
@@ -41,6 +45,37 @@ public class UserController {
 
         boolean b = userService.insertAllColumn(user);
         return R.ok();
+    }
+
+    @RequestMapping("/findUserList")
+    @ResponseBody
+    public List<User> findUserList(HttpServletRequest request){
+        List<User> users = userService.selectList(new EntityWrapper<User>());
+        return users;
+    }
+
+    @RequestMapping("/admin")
+    public String login(String username,String password){
+            return "admin";
+    }
+
+    @RequestMapping("/loginUser")
+    public String loginUser(String username,String password){
+        if(username.equals("admin")&&password.equals("admin")){
+            return "userManager";
+        }else{
+            return "redirect:/user/admin";
+        }
+    }
+
+    @RequestMapping("/selectByDate")
+    public String  findUserByDate(@RequestParam(value = "date",required = false,defaultValue = "2018-08-01") String date, Model model){
+//        String addByDay = DateUtils.addByDay(date, 1);
+        Date date1 = DateUtils.parseDate("2018-08-07");
+        Date date2 = DateUtils.parseDate("2018-08-08");
+        List<User> users = userService.selectList(new EntityWrapper<User>().between("creat_date",date1,date2));
+        model.addAttribute("users",users);
+        return "userManager";
     }
 }
 

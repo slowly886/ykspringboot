@@ -2,16 +2,15 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>兄弟后台登录</title>
+<title>后台登录</title>
 <meta name="author" content="DeathGhost">
- <link rel="stylesheet" type="text/css" href="admin/style.css">
+ <link rel="stylesheet" type="text/css" href="/admin/style.css">
+ <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
 <style>
 body{height:100%;background:#16a085;overflow:hidden;}
 canvas{z-index:-1;position:absolute;}
 </style>
- <script src="admin/jquery.html"></script>
 <!-- <script src="style/js/verificationNumbers.js"></script> -->
- <script src="admin/Particleground.html"></script>
 <script>
 $(document).ready(function() {
   //粒子背景特效
@@ -28,7 +27,7 @@ $(document).ready(function() {
   <strong>后台管理系统</strong>
   <em>Management System</em>
  </dt>
- <form action="/login" method="post">
+ <form action="/user/loginUser" method="post">
  <dd class="user_icon">
   <input name="username" placeholder="账号" class="login_txtbx" type="text">
  </dd>
