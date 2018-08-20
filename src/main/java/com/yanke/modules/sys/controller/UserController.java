@@ -2,11 +2,11 @@ package com.yanke.modules.sys.controller;
 
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.common.utils.DateUtils;
-import com.common.utils.SnowflakeIdWorker;
 import com.yanke.modules.sys.entity.User;
 import com.yanke.modules.sys.service.UserService;
 import com.yanke.modules.utils.R;
+import common.utils.DateUtils;
+import common.utils.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
