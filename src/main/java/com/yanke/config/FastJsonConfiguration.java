@@ -6,6 +6,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
@@ -13,11 +14,11 @@ import java.util.List;
  * 配置fastjson返回代替jackjson
  */
 @Configuration
-public class FastJsonConfiguration extends WebMvcConfigurationSupport {
+public class FastJsonConfiguration implements WebMvcConfigurer {
     @Override
-    protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         //调用父类配置
-        super.configureMessageConverters(converters);
+        WebMvcConfigurer.super.configureMessageConverters(converters);
         //创建Fastjson消息转化器
         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
         //创建配置类
